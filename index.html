@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Movie</title>
+    <title>e-commerce</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
 </head>
@@ -52,7 +52,6 @@
 </style>
 
 <body>
-
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-4">
         <div class="container">
             <a class="navbar-brand" href="#">E-commerce</a>
@@ -62,12 +61,12 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0  ms-auto">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-auto">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
+                        <a class="nav-link" href="/cart.html">Cart</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -78,9 +77,11 @@
                             <li><a class="dropdown-item" href="#">Action</a></li>
                             <li><a class="dropdown-item" href="#">Another action</a></li>
                             <li>
-                                <hr class="dropdown-divider">
+                                <hr class="dropdown-divider" />
                             </li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            <li>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </li>
                         </ul>
                     </li>
                     <li class="nav-item">
@@ -88,66 +89,73 @@
                     </li>
                 </ul>
                 <form class="d-flex">
-                    <input class="form-control me-2" type="search" id="search" placeholder="Search" aria-label="Search">
+                    <input class="form-control me-2" type="search" id="search" placeholder="Search"
+                        aria-label="Search" />
                     <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
                 </form>
             </div>
         </div>
     </nav>
 
-    <div class="container border  rounded-5">
+    <div class="container border rounded-5">
         <div class="row position-relative">
-            <div class="col-lg-3 col-sm-12  ">
+            <div class="col-lg-3 col-sm-12">
                 <div id="catagory" class="">
                     <h1>catagory</h1>
                 </div>
-
             </div>
-            <div class="col-lg-9 ">
+            <div class="col-lg-9">
                 <div id="product_display" class="row">
                     <h1 class="py-2">Products</h1>
-
                 </div>
             </div>
         </div>
     </div>
 
-
-
-    <div class="modal fade text-white" id="exampleModalToggle" aria-hidden="true"
+    <div class="modal fade text-white w-100" id="exampleModalToggle" aria-hidden="true"
         aria-labelledby="exampleModalToggleLabel" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered w-100">
-            <div class="modal-content bg-dark border-white">
+        <div class="modal-dialog modal-fullscreen modal-dialog-centered w-100">
+            <div class="modal-content bg-white text-dark border-white w-100">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalToggleLabel">Modal 1</h5>
+
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    error
+                    <div class="row flex-row">
+
+
+                        <div class="col-lg-6 col-md-12 ">
+
+                            <img src="${ele.image}" class="d-flex justify-content-center img-fluid"
+                                style="width:500px" />
+                        </div>
+                        <div class="col-lg-6 col-md-12">
+                            <p class="py-1"><b>Discription : </b>📢 ${ele.description}</p>
+                            <p class="py-1"><b>Price : </b>$ ${ele.price}</p>
+                            <hr>
+                            <p class="py-1"><b>Ratings : </b>⭐ ${ele.rating.count}</p>
+                            <hr>
+                        </div>
+                    </div>
+                    <hr>
+
+
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal"
-                        data-bs-dismiss="modal">
-                        buy
-                    </button>
+                    <button class="btn btn-primary">🛒 Add To Cart </button>`
                 </div>
             </div>
         </div>
     </div>
 </body>
 
-
-
-
-
-
-
 <script src="data.js"></script>
 <script>
-    console.log(data)
+    console.log(data);
     data.map((ele) => {
-        let cards = document.getElementById("product_display")
-        let catagory = document.getElementById("catagory")
+        let cards = document.getElementById("product_display");
+        let catagory = document.getElementById("catagory");
         cards.innerHTML += ` 
       <div class="col-lg-3 col-md-6 my-2">
           <div class="card">
@@ -170,70 +178,85 @@
         `;
     });
 
-    let search = document.getElementById("search")
+    let search = document.getElementById("search");
     search.addEventListener("keyup", function (e) {
         let val = e.target.value.toUpperCase();
-        let searchData = data.filter((ele) => !ele.title.toUpperCase().indexOf(val) || !ele.category.toUpperCase().indexOf(val))
-        console.log(searchData)
+        let searchData = data.filter(
+            (ele) =>
+                !ele.title.toUpperCase().indexOf(val) ||
+                !ele.category.toUpperCase().indexOf(val)
+        );
+        console.log(searchData);
         // showall(searchData)
-    })
-
+    });
 
     data.filter((ele) => {
         catagory.innerHTML += `
         <input type="checkbox">${ele.category}</input></br>
-        `
-    })
-
+        `;
+    });
 
     function man(id) {
         let onlmove = data.filter((ele) => ele.id == id);
         data.innerHTML = " ";
-        console.log(id)
+        console.log(id);
 
         onlmove.map((ele) => {
-            document.querySelector(".modal-footer").innerHTML = `<button class="btn btn-primary" > Download </button>`
-            document.querySelector(".modal-header").innerHTML = `<h5 class="modal-title" id="exampleModalToggleLabel">🎬 ${ele.title}</h5>`
+            document.querySelector(
+                ".modal-footer"
+            ).innerHTML = `<button class="btn btn-primary" >🛒 Add To Cart </button>`;
+            document.querySelector(
+                ".modal-header"
+            ).innerHTML = `<h5 class="modal-title" id="exampleModalToggleLabel">🎬 ${ele.title}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>`;
             document.querySelector(".modal-body").innerHTML = `
-        <img src="${ele.image}" class ="d-flex justify-content-center img-fluid"  />
-        <hr>
-        <p class="py-1"><b>Genre : </b>📢 ${ele.price}</p>
+
+             <div class="row flex-row">
+       
+   
+               <div class="col-lg-6 col-md-12 d-flex justify-content-center">
+            
+            <img src="${ele.image}" class ="d-flex justify-content-center img-fluid" style="width:500px" />
+        </div>
+        <div class="col-lg-6 col-md-12">
+            <p class="py-1"><b>Discription : </b>📢 ${ele.description}</p>
+             <h5 class="py-1"><b>Price : </b>$ ${ele.price}</h5>
+             <p class="py-1"><b>Sku : </b> ${ele.id}</p>
         <hr>
         <p class="py-1"><b>Ratings : </b>⭐ ${ele.rating.count}</p>
         <hr>
-        <p class="py-1"><b>Release Date : </b>📢 ${ele.description}</p>
+
+        <p class="py-1"><b>Catagory : </b>🛍️ ${ele.category}</p>
+        <hr>
+        <p class="py-1"><b>Stocks : </b>📦 ${ele.rating.count}</p>
+        </div> 
+        </div>
       `;
         });
+    }
+
+   let cartData =JSON.parse(localStorage.getItem("cartData")) || [];
+
+      function addCart(id){
+     let newcartData = data.filter((ele) => ele.id == id)
+     newcartData.map((ele)=> {
+        if(ele.id == id){
+            ele.quantity=1
+            
+        }
+        return ele;
+     })
+        cartData = [...cartData, ...newcartData]
+        console.log(cartData);
+      setData(cartData)
     }
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    function setData(d){
+        localStorage.setItem("cartData" ,JSON.stringify(d))
+    }
 
 
 
@@ -255,32 +278,33 @@
 
 
     function showall(ele) {
-        cards.innerHTML += " "
+        cards.innerHTML += " ";
 
         data.filter((ele) => {
-            let cards = document.getElementById("product_display")
-            cards.innerHTML += ` 
-      <div class="col-lg-3 col-md-6 my-2">
-          <div class="card">
-              <img src="${ele.image}" class="card-img-top p-4 img-fluid" alt="${ele.image}" />
-              <div class="card-body">
-                <h6 class="card-title">${ele.title}</h6>
-                <h6 class="card-title">SKU : ${ele.id}</h6>
-                <p class="card-title">📦 ${ele.rating.count} | ⭐ ${ele.rating.rate}</p>
-                <p class="card-title fs-6 overflow-auto" style = "height:100px">ℹ️ ${ele.description} <br> <b class="text-danger"> view more...</b></p>
-                <li class="card-title mono">${ele.category}</li>
-                </p>
-                <div class="d-flex justify-content-around">
-               <button onclick="man('${ele.title}')" class="btn " data-bs-toggle="modal" data-bs-target="#exampleModalToggle" role="button">View More...</button>
-               <button onclick="addCart('${ele.title}')" class="btn btn-danger" role="button"><i class="ri-heart-add-line"></i></button>
-               </div>
-           </div>
-            </div>
-        </div>
-          
+            let cards = document.getElementById("product_display");
+            cards.innerHTML += `
+                < div class="col-lg-3 col-md-6 my-2" >
+                    <div class="card">
+                        <img src="${ele.image}" class="card-img-top p-4 img-fluid" alt="${ele.image}" />
+                        <div class="card-body">
+                            <h6 class="card-title">${ele.title}</h6>
+                            <h6 class="card-title">SKU : ${ele.id}</h6>
+                            <p class="card-title">📦 ${ele.rating.count} | ⭐ ${ele.rating.rate}</p>
+                            <p class="card-title fs-6 overflow-auto" style="height:100px">ℹ️ ${ele.description} <br> <b class="text-danger"> view more...</b></p>
+                            <li class="card-title mono">${ele.category}</li>
+                        </p>
+                        <div class="d-flex justify-content-around">
+                            <button onclick="man('${ele.title}')" class="btn " data-bs-toggle="modal" data-bs-target="#exampleModalToggle" role="button">View More...</button>
+                            <button onclick="addCart('${ele.title}')" class="btn btn-danger" role="button"><i class="ri-heart-add-line"></i></button>
+                        </div>
+                    </div>
+            </div >
+        </div >
+
          `;
         });
     }
 </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </html>

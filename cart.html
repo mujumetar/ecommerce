@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cart</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+<style>
+    td {
+        height: 100px;
+    }
+</style>
+
+<body>
+
+    <div class="container">
+        <h1 class="text-center py-5">Cart</h1>
+    </div>
+    <div class="container">
+        <table class="table border align-middle">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Image</th>
+                    <th>Title</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Cancel</th>
+                </tr>
+            </thead>
+            <tbody class="tbody">
+
+            </tbody>
+        </table>
+    </div>
+
+
+</body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 bill">
+            <p class="to-item">Total Item: </p>
+            <p class="total">Total Price: </p>
+            <p class="offer">offer %: </p>
+        </div>
+    </div>
+</div>
+<script src="data.js"></script>
+<script>
+    window.onload = showcart()
+    let addedData = JSON.parse(localStorage.getItem("cartData"))
+
+    localStorage.getItem("addData")
+
+    function setData(d) {
+        localStorage.setItem("cartData", JSON.stringify(d))
+    }
+
+    function showcart() {
+        let table = document.querySelector(".tbody")
+        let addedData = JSON.parse(localStorage.getItem("cartData"))
+
+
+        table.innerHTML = " "
+        addedData.map((ele) => {
+            // console.log(ele.title)
+            table.innerHTML += `
+                <tr>
+                    <td>${ele.id}</td>
+                    <td><img src="${ele.image}" class="text-center"
+                            style="width: 100px;" alt="${ele.image}"></td>
+                    <td>${ele.title}</td>
+                    <td><b>$ ${ele.price*ele.quantity}</b></td>
+                    <td>
+                    <button class="btn btn-primary btn-sm" onclick="inc(${ele.id})"> + </button>   
+                    <button class="btn btn-outline border" disabled>${ele.quantity}</button>   
+                    <button class="btn btn-danger btn-sm" onclick="dec(${ele.id})"> - </button>   
+                    </td>
+                    
+                    <td><h3 id="close"><i class="ri-close-large-fill"></i></h3></td>
+                </tr>
+                
+`
+        })
+
+    }
+
+
+
+    function bill() {
+        let total = document.querySelector(".total")
+
+    }
+
+    function inc(id) {
+        let incdata = addedData.map((ele) => {
+            if (ele.id == id) {
+                ele.quantity++
+            }
+            return ele
+        })
+        setData(incdata)
+        showcart()
+    }
+
+    function dec(id) {
+        let decdata = addedData.map((ele) => {
+            if (ele.id == id) {
+                if (ele.quantity > 1) {
+                    ele.quantity--
+                }
+            }
+            return ele
+        })
+        setData(decdata)
+        showcart()
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</html>
