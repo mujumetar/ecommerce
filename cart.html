@@ -67,7 +67,7 @@
 
         table.innerHTML = " "
         addedData.map((ele) => {
-            // console.log(ele.title)
+            console.log(ele.title)
             table.innerHTML += `
                 <tr>
                     <td>${ele.id}</td>
@@ -88,8 +88,6 @@
         })
 
     }
-
-
 
     function bill() {
         let total = document.querySelector(".total")
