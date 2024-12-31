@@ -229,7 +229,10 @@ console.log(data)
   }
 
   let cartData = JSON.parse(localStorage.getItem("cartData")) || [];
+
+
   function addCart(id) {
+
     let newcartData = data.filter((ele) => ele.id == id);
     newcartData.map((ele) => {
       if (ele.id == id) {
@@ -261,8 +264,8 @@ console.log(data)
                             <li class="card-title mono">${ele.category}</li>
                         </p>
                         <div class="d-flex justify-content-around">
-                            <button onclick="man('${ele.title}')" class="btn " data-bs-toggle="modal" data-bs-target="#exampleModalToggle" role="button">View More...</button>
-                            <button onclick="addCart('${ele.title}')" class="btn btn-danger" role="button"><i class="ri-heart-add-line"></i></button>
+                            <button onclick="man(${ele.title})" class="btn " data-bs-toggle="modal" data-bs-target="#exampleModalToggle" role="button">View More...</button>
+                            <button onclick="addCart(${ele.id})" class="btn btn-danger" role="button"><i class="ri-heart-add-line"></i></button>
                         </div>
                     </div>
             </div >

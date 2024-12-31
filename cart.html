@@ -54,18 +54,21 @@
     window.onload = showcart()
     let addedData = JSON.parse(localStorage.getItem("cartData"))
 
-    localStorage.getItem("addData")
 
     function setData(d) {
         localStorage.setItem("cartData", JSON.stringify(d))
+        location.reload();
+       showcart()
     }
 
     function showcart() {
         let table = document.querySelector(".tbody")
-        let addedData = JSON.parse(localStorage.getItem("cartData"))
+            table.innerHTML = ""
 
+       let  addedData = JSON.parse(localStorage.getItem("cartData"))
 
-        table.innerHTML = " "
+       console.log(addedData)
+
         addedData.map((ele) => {
             console.log(ele.title)
             table.innerHTML += `
@@ -81,7 +84,7 @@
                     <button class="btn btn-danger btn-sm" onclick="dec(${ele.id})"> - </button>   
                     </td>
                     
-                    <td><h3 id="close" onclick="del(id)"><i class="ri-close-large-fill"></i></h3></td>
+                    <td><h3 id="close" onclick="del(${ele.id})"><i class="ri-close-large-fill"></i></h3></td>
                 </tr>
                 
 `
@@ -118,6 +121,16 @@
         })
         setData(decdata)
         showcart()
+    }
+
+    function del(id){
+    //    console.log(id)
+       let deldata = addedData.filter((ele) => ele.id != id)
+       console.log(deldata)
+
+
+       setData(deldata)
+
     }
 
 
