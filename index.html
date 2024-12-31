@@ -1,46 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>e-commerce</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
-</head>
-<style>
-    .card>img {
-        aspect-ratio: 2/2;
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    .card > img {
+      aspect-ratio: 2/2;
     }
 
     /* width */
     ::-webkit-scrollbar {
-        width: 3px;
+      width: 3px;
     }
 
     ::-webkit-scrollbar:hover {
-        width: 10px;
+      width: 10px;
     }
 
     /* Track */
     ::-webkit-scrollbar-track {
-        box-shadow: inset 0 0 5px gainsboro;
-        border-radius: 10px;
+      box-shadow: inset 0 0 5px gainsboro;
+      border-radius: 10px;
     }
 
     /* Handle */
     ::-webkit-scrollbar-thumb {
-        background: blueviolet;
-        border-radius: 10px;
+      background: blueviolet;
+      border-radius: 10px;
     }
 
     /* Handle on hover */
     ::-webkit-scrollbar-thumb:hover {
-        background: yellowgreen;
+      background: yellowgreen;
     }
 
     .mono {
-        color: rgb(30, 139, 143);
+      color: rgb(30, 139, 143);
     }
 
     /* @media (min-width: 576px) {
@@ -49,114 +54,146 @@
       !important margin: 1.75rem auto;
     }
   } */
-</style>
+  </style>
 
-<body>
+  <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-4">
-        <div class="container">
-            <a class="navbar-brand" href="#">E-commerce</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/cart.html">Cart</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Dropdown
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li>
-                                <hr class="dropdown-divider" />
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="#">Something else here</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                    </li>
-                </ul>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" id="search" placeholder="Search"
-                        aria-label="Search" />
-                    <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
-                </form>
-            </div>
+      <div class="container">
+        <a class="navbar-brand" href="#">E-commerce</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/cart.html">Cart</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Dropdown
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link disabled"
+                href="#"
+                tabindex="-1"
+                aria-disabled="true"
+                >Disabled</a
+              >
+            </li>
+          </ul>
+          <form class="d-flex">
+            <input
+              class="form-control me-2"
+              type="search"
+              id="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
+          </form>
         </div>
+      </div>
     </nav>
 
     <div class="container border rounded-5">
-        <div class="row position-relative">
-            <div class="col-lg-3 col-sm-12">
-                <div id="catagory" class="">
-                    <h1>catagory</h1>
-                </div>
-            </div>
-            <div class="col-lg-9">
-                <div id="product_display" class="row">
-                    <h1 class="py-2">Products</h1>
-                </div>
-            </div>
+      <div class="row position-relative">
+        <div class="col-lg-3 col-sm-12">
+          <div id="catagory" class="">
+            <h1>catagory</h1>
+          </div>
         </div>
+        <div class="col-lg-9">
+          <div id="product_display" class="row">
+            <h1 class="py-2">Products</h1>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <div class="modal fade text-white w-100" id="exampleModalToggle" aria-hidden="true"
-        aria-labelledby="exampleModalToggleLabel" tabindex="-1">
-        <div class="modal-dialog modal-fullscreen modal-dialog-centered w-100">
-            <div class="modal-content bg-white text-dark border-white w-100">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalToggleLabel">Modal 1</h5>
+    <div
+      class="modal fade text-white w-100"
+      id="exampleModalToggle"
+      aria-hidden="true"
+      aria-labelledby="exampleModalToggleLabel"
+      tabindex="-1"
+    >
+      <div class="modal-dialog modal-fullscreen modal-dialog-centered w-100">
+        <div class="modal-content bg-white text-dark border-white w-100">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalToggleLabel">Modal 1</h5>
 
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="row flex-row">
-
-
-                        <div class="col-lg-6 col-md-12 ">
-
-                            <img src="${ele.image}" class="d-flex justify-content-center img-fluid"
-                                style="width:500px" />
-                        </div>
-                        <div class="col-lg-6 col-md-12">
-                            <p class="py-1"><b>Discription : </b>📢 ${ele.description}</p>
-                            <p class="py-1"><b>Price : </b>$ ${ele.price}</p>
-                            <hr>
-                            <p class="py-1"><b>Ratings : </b>⭐ ${ele.rating.count}</p>
-                            <hr>
-                        </div>
-                    </div>
-                    <hr>
-
-
-                </div>
-                <div class="modal-footer">
-                    <button class="btn btn-primary">🛒 Add To Cart </button>`
-                </div>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="row flex-row">
+              <div class="col-lg-6 col-md-12">
+                <img
+                  src="${ele.image}"
+                  class="d-flex justify-content-center img-fluid"
+                  style="width: 500px"
+                />
+              </div>
+              <div class="col-lg-6 col-md-12">
+                <p class="py-1"><b>Discription : </b>📢 ${ele.description}</p>
+                <p class="py-1"><b>Price : </b>$ ${ele.price}</p>
+                <hr />
+                <p class="py-1"><b>Ratings : </b>⭐ ${ele.rating.count}</p>
+                <hr />
+              </div>
             </div>
+            <hr />
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-primary">🛒 Add To Cart</button>`
+          </div>
         </div>
+      </div>
     </div>
-</body>
+  </body>
 
-<script src="data.js"></script>
-<script>
+  <script src="data.js"></script>
+  <script>
+      let allcat = [];
     console.log(data);
     data.map((ele) => {
-        let cards = document.getElementById("product_display");
-        let catagory = document.getElementById("catagory");
-        cards.innerHTML += ` 
+      let cards = document.getElementById("product_display");
+      let catagory = document.getElementById("catagory");
+      cards.innerHTML += `
       <div class="col-lg-3 col-md-6 my-2">
           <div class="card">
               <img src="${ele.image}" class="card-img-top p-4 img-fluid" alt="${ele.image}" />
@@ -167,49 +204,51 @@
                 <p class="card-title fs-6 overflow-auto" style = "height:100px">ℹ️ ${ele.description} <br> <b class="text-danger"> view more...</b></p>
                 <li class="card-title mono">${ele.category}</li>
                 </p>
-                <div class="d-flex justify-content-around">
+               <div class="d-flex justify-content-around">
                <button onclick="man('${ele.id}')" class="btn " data-bs-toggle="modal" data-bs-target="#exampleModalToggle" role="button">View More...</button>
                <button onclick="addCart('${ele.id}')" class="btn btn-danger" role="button"><i class="ri-heart-add-line"></i></button>
                </div>
            </div>
             </div>
         </div>
-          
         `;
+
+
+      if (!allcat.includes(ele.category)) {
+        catagory.innerHTML += `
+        <input type="checkbox">${ele.category}</input></br>
+        `;
+        allcat.push(ele.category);
+        console.log(allcat);
+      }
     });
 
     let search = document.getElementById("search");
     search.addEventListener("keyup", function (e) {
-        let val = e.target.value.toUpperCase();
-        let searchData = data.filter(
-            (ele) =>
-                !ele.title.toUpperCase().indexOf(val) ||
-                !ele.category.toUpperCase().indexOf(val)
-        );
-        console.log(searchData);
-        // showall(searchData)
-    });
-
-    data.filter((ele) => {
-        catagory.innerHTML += `
-        <input type="checkbox">${ele.category}</input></br>
-        `;
+      let val = e.target.value.toUpperCase();
+      let searchData = data.filter(
+        (ele) =>
+          !ele.title.toUpperCase().indexOf(val) ||
+          !ele.category.toUpperCase().indexOf(val)
+      );
+      console.log(searchData);
+      // showall(searchData)
     });
 
     function man(id) {
-        let onlmove = data.filter((ele) => ele.id == id);
-        data.innerHTML = " ";
-        console.log(id);
+      let onlmove = data.filter((ele) => ele.id == id);
+      data.innerHTML = " ";
+      console.log(id);
 
-        onlmove.map((ele) => {
-            document.querySelector(
-                ".modal-footer"
-            ).innerHTML = `<button class="btn btn-primary" >🛒 Add To Cart </button>`;
-            document.querySelector(
-                ".modal-header"
-            ).innerHTML = `<h5 class="modal-title" id="exampleModalToggleLabel">🎬 ${ele.title}</h5>
+      onlmove.map((ele) => {
+        document.querySelector(
+          ".modal-footer"
+        ).innerHTML = `<button class="btn btn-primary" >🛒 Add To Cart </button>`;
+        document.querySelector(
+          ".modal-header"
+        ).innerHTML = `<h5 class="modal-title" id="exampleModalToggleLabel">🎬 ${ele.title}</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>`;
-            document.querySelector(".modal-body").innerHTML = `
+        document.querySelector(".modal-body").innerHTML = `
 
              <div class="row flex-row">
        
@@ -232,54 +271,34 @@
         </div> 
         </div>
       `;
-        });
+      });
     }
 
-   let cartData =JSON.parse(localStorage.getItem("cartData")) || [];
+    let cartData = JSON.parse(localStorage.getItem("cartData")) || [];
 
-      function addCart(id){
-     let newcartData = data.filter((ele) => ele.id == id)
-     newcartData.map((ele)=> {
-        if(ele.id == id){
-            ele.quantity=1
-            
+    function addCart(id) {
+      let newcartData = data.filter((ele) => ele.id == id);
+      newcartData.map((ele) => {
+        if (ele.id == id) {
+          ele.quantity = 1;
         }
         return ele;
-     })
-        cartData = [...cartData, ...newcartData]
-        console.log(cartData);
-      setData(cartData)
+      });
+      cartData = [...cartData, ...newcartData];
+      console.log(cartData);
+      setData(cartData);
     }
 
-    function setData(d){
-        localStorage.setItem("cartData" ,JSON.stringify(d))
+    function setData(d) {
+      localStorage.setItem("cartData", JSON.stringify(d));
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     function showall(ele) {
-        cards.innerHTML += " ";
+      cards.innerHTML += " ";
 
-        data.filter((ele) => {
-            let cards = document.getElementById("product_display");
-            cards.innerHTML += `
+      data.filter((ele) => {
+        let cards = document.getElementById("product_display");
+        cards.innerHTML += `
                 < div class="col-lg-3 col-md-6 my-2" >
                     <div class="card">
                         <img src="${ele.image}" class="card-img-top p-4 img-fluid" alt="${ele.image}" />
@@ -299,9 +318,8 @@
         </div >
 
          `;
-        });
+      });
     }
-</script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 </html>
