@@ -181,14 +181,15 @@
   let search = document.getElementById("search");
   search.addEventListener("keyup", function (e) {
     let val = e.target.value.toUpperCase();
+    cards.innerHTML += " ";
     let searchData = data.filter(
       (ele) =>
         !ele.title.toUpperCase().indexOf(val) ||
         !ele.category.toUpperCase().indexOf(val)
     );
+    
     console.log(searchData);
-    data.innerHTML = " ";
-    showall(searchData)
+    // showall(searchData)
   });
 
   function man(id) {
@@ -248,10 +249,10 @@
     localStorage.setItem("cartData", JSON.stringify(d));
   }
 
+  let cards = document.getElementById("product_display");
   function showall(ele) {
     cards.innerHTML += " ";
     data.filter((ele) => {
-      let cards = document.getElementById("product_display");
       cards.innerHTML += `
                 < div class="col-lg-3 col-md-6 my-2" >
                     <div class="card">
