@@ -74,14 +74,14 @@
                     <td><img src="${ele.image}" class="text-center"
                             style="width: 100px;" alt="${ele.image}"></td>
                     <td>${ele.title}</td>
-                    <td><b>$ ${ele.price*ele.quantity}</b></td>
+                    <td><b>$ ${ele.price * ele.quantity}</b></td>
                     <td>
                     <button class="btn btn-primary btn-sm" onclick="inc(${ele.id})"> + </button>   
                     <button class="btn btn-outline border" disabled>${ele.quantity}</button>   
                     <button class="btn btn-danger btn-sm" onclick="dec(${ele.id})"> - </button>   
                     </td>
                     
-                    <td><h3 id="close"><i class="ri-close-large-fill"></i></h3></td>
+                    <td><h3 id="close" onclick="del(id)"><i class="ri-close-large-fill"></i></h3></td>
                 </tr>
                 
 `
@@ -121,7 +121,14 @@
     }
 
 
-
+ 
+    function del(id) {
+        console.log("hii")
+        let delData = addedData.filter((ele) => ele.id != id)
+        setData(delData) 
+        cartData = JSON.parse(localStorage.getItem("cartData"))
+        showcart(cartData)
+    }
 
 
 
