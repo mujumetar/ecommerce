@@ -91,7 +91,6 @@
 
     function bill() {
         let total = document.querySelector(".total")
-
     }
 
     function inc(id) {
@@ -111,6 +110,9 @@
                 if (ele.quantity > 1) {
                     ele.quantity--
                 }
+                // else if(ele.quantity < 0){
+                //     console.log(ele.id)
+                // }
             }
             return ele
         })

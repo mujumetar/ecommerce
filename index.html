@@ -144,40 +144,37 @@
 
 <script src="data.js"></script>
 <script>
+  let cards = document.getElementById("product_display");
+
   let allcat = [];
-  console.log(data);
-  data.map((ele) => {
-    let cards = document.getElementById("product_display");
-    let catagory = document.getElementById("catagory");
-    cards.innerHTML += `
-      <div class="col-lg-3 col-md-6 my-2">
-          <div class="card">
-              <img src="${ele.image}" class="card-img-top p-4 img-fluid" alt="${ele.image}" />
-              <div class="card-body">
-                <h6 class="card-title">${ele.title}</h6>
-                <h6 class="card-title">SKU : ${ele.id}</h6>
-                <p class="card-title">📦 ${ele.rating.count} | ⭐ ${ele.rating.rate}</p>
-                <p class="card-title fs-6 overflow-auto" style = "height:100px">ℹ️ ${ele.description} <br> <b class="text-danger"> view more...</b></p>
-                <li class="card-title mono">${ele.category}</li>
-                </p>
-               <div class="d-flex justify-content-around">
-               <button onclick="man('${ele.id}')" class="btn " data-bs-toggle="modal" data-bs-target="#exampleModalToggle" role="button">View More...</button>
-               <button onclick="addCart('${ele.id}')" class="btn btn-danger" role="button"><i class="ri-heart-add-line"></i></button>
-               </div>
-           </div>
-            </div>
-        </div>
-        `;
+  // console.log(data);
+  
+  // data.map((ele) => {
+  //   let cards = document.getElementById("product_display");
+  //   let catagory = document.getElementById("catagory");
+  //   cards.innerHTML += `
+  //     <div class="col-lg-3 col-md-6 my-2">
+  //         <div class="card">
+  //             <img src="${ele.image}" class="card-img-top p-4 img-fluid" alt="${ele.image}" />
+  //             <div class="card-body">
+  //               <h6 class="card-title">${ele.title}</h6>
+  //               <h6 class="card-title">SKU : ${ele.id}</h6>
+  //               <p class="card-title">📦 ${ele.rating.count} | ⭐ ${ele.rating.rate}</p>
+  //               <p class="card-title fs-6 overflow-auto" style = "height:100px">ℹ️ ${ele.description} <br> <b class="text-danger"> view more...</b></p>
+  //               <li class="card-title mono">${ele.category}</li>
+  //               </p>
+  //              <div class="d-flex justify-content-around">
+  //              <button onclick="man('${ele.id}')" class="btn " data-bs-toggle="modal" data-bs-target="#exampleModalToggle" role="button">View More...</button>
+  //              <button onclick="addCart('${ele.id}')" class="btn btn-danger" role="button"><i class="ri-heart-add-line"></i></button>
+  //              </div>
+  //          </div>
+  //           </div>
+  //       </div>
+  //       `;
 
-    if (!allcat.includes(ele.category)) {
-      catagory.innerHTML += `
-        <input type="checkbox">${ele.category}</input></br>
-        `;
-      allcat.push(ele.category);
-      console.log(allcat);
-    }
-  });
 
+  // });
+console.log(data)
   let search = document.getElementById("search");
   search.addEventListener("keyup", function (e) {
     let val = e.target.value.toUpperCase();
@@ -187,9 +184,10 @@
         !ele.title.toUpperCase().indexOf(val) ||
         !ele.category.toUpperCase().indexOf(val)
     );
-    
+
     console.log(searchData);
-    // showall(searchData)
+    showall(searchData)
+
   });
 
   function man(id) {
@@ -206,7 +204,6 @@
       ).innerHTML = `<h5 class="modal-title" id="exampleModalToggleLabel">🎬 ${ele.title}</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>`;
       document.querySelector(".modal-body").innerHTML = `
-
              <div class="row flex-row">
        
    
@@ -249,12 +246,11 @@
     localStorage.setItem("cartData", JSON.stringify(d));
   }
 
-  let cards = document.getElementById("product_display");
-  function showall(ele) {
-    cards.innerHTML += " ";
-    data.filter((ele) => {
+  function showall(d) {
+    cards.innerHTML = "";
+    d.map((ele) => {
       cards.innerHTML += `
-                < div class="col-lg-3 col-md-6 my-2" >
+                <div class="col-lg-3 col-md-6 my-2" >
                     <div class="card">
                         <img src="${ele.image}" class="card-img-top p-4 img-fluid" alt="${ele.image}" />
                         <div class="card-body">
@@ -272,8 +268,21 @@
             </div >
         </div >
          `;
+
+
+          
+    if (!allcat.includes(ele.category)) {
+      catagory.innerHTML += `
+        <input type="checkbox">${ele.category}</input></br>
+        `;
+      allcat.push(ele.category);
+      console.log(allcat);
+    }
     });
+   
   }
+
+  window.onload = showall(data)
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 
