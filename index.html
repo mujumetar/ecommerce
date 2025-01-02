@@ -65,35 +65,38 @@
 </style>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-4 position-fixed top-0 w-100 ">
-    <div class="container">
-      <a class="navbar-brand" href="#">E-commerce</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-auto">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/cart.html">Cart</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/login.html">login</a>
-          </li>
-        </ul>
+  <!-- <div class="container"> -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-4 position-fixed top-0 w-100 ">
+      <div class="container">
+        <a class="navbar-brand" href="#">E-commerce</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/cart.html">Cart</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/login.html">login</a>
+            </li>
+          </ul>
+
+        </div>
+
 
       </div>
+      <form class="my-2">
+        <input class="ms-3" type="search" id="search" placeholder="Search" aria-label="Search" />
+        <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
+      </form>
+    </nav>
+  <!-- </div> -->
 
-     
-    </div>
-    <form class="d-flex my-2 m-auto">
-      <input class="form-control me-2" type="search" id="search" placeholder="Search" aria-label="Search" />
-      <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
-    </form>
-  </nav>
 
   <div class="container my-5">
     <div class="cart  bg-light border border-dark border-end-0 rounded-start position-fixed ">
@@ -378,7 +381,7 @@
     showall(other)
   })
 
-  
+
   window.onload = showall(data)
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
