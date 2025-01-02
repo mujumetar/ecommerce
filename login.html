@@ -4,104 +4,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login</title>
+    <title>log in</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
 </head>
 
 <body>
     <div class="container my-5">
-        <div class="row">
-            <div class="col-lg-6 col-12">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane"
+                    type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Register</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane"
+                    type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Log In</button>
+            </li>
 
-                <ul class="nav nav-tabs" id="myTab" role="tablist">
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link active" id="home-tab" data-bs-toggle="tab"
-                            data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane"
-                            aria-selected="true">Register</button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="profile-tab" data-bs-toggle="tab"
-                            data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane"
-                            aria-selected="false">Login</button>
-                    </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab"
+                tabindex="0">
 
-                </ul>
-                <div class="tab-content" id="myTabContent">
-                    <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab"
-                        tabindex="0">
-
-                        <form id="registration">
-                            <div class="mb-3 mt-3">
-                                <label for="exampleInputEmail1" class="form-label">Name</label>
-                                <input type="text" class="form-control" id="name" id="color"
-                                    aria-describedby="emailHelp">
-                            </div>
-                            <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Email address</label>
-                                <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
-                            </div>
-                            <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">phone Number</label>
-                                <input type="number" class="form-control" id="phone" aria-describedby="emailHelp">
-                            </div>
-                            <div class="mb-3">
-                                <label for="exampleInputPassword1" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="password">
-                            </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                        </form>
-
+                <form id="reg">
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">name</label>
+                        <input type="text" class="form-control" id="name" aria-describedby="emailHelp">
                     </div>
-                    <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab"
-                        tabindex="0">
-                        <form id="login">
-                            <div class="mb-3 mt-3">
-                                <label for="exampleInputEmail1" class="form-label">Email address</label>
-                                <input type="email" class="form-control" id="email1" aria-describedby="emailHelp">
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="exampleInputPassword1" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="password1">
-                            </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                        </form>
-
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
                     </div>
-                </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">phone</label>
+                        <input type="number" class="form-control" id="phone" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
             </div>
+            <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+                <form id="login">
+
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="email1" aria-describedby="emailHelp">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password1">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+
         </div>
+
+
+
+
+
     </div>
 </body>
 <script>
-    let registration = [];
-    document.getElementById("registration").addEventListener("submit", function (e) {
-        e.preventDefault();
-
-        let data = {
-            name: document.querySelector("#name").value,
-            email: document.querySelector("#email").value,
-            phone: document.querySelector("#phone").value,
-            password: document.querySelector("#password").value,
-        }
-        
-        console.log(data)
-
-        registration = JSON.parse(localStorage.getItem("registration"))
-        
-        if (data.name != "" && data.email != "" && data.phone != "" && data.password != "") {
-            
-            registration.push(data)
-
-
-            localStorage.setItem("registration", JSON.stringify(registration));
-            location.href = "index.html";
+    let register = []
+    let reg = document.querySelector("#reg")
+    reg.addEventListener("submit", function (e) {
+        e.preventDefault()
+        let obj = {
+            name: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            phone: document.getElementById("phone").value,
+            password: document.getElementById("password").value
 
         }
+
+        register = JSON.parse(localStorage.getItem("register")) || []
+
+
+        let log = register.filter((ele) => {
+            if (ele.email == obj.email && ele.password == obj.password) {
+                return ele
+            }
+        })
+
+        if (log[0]) {
+
+            alert("user already registered")
+        }
+        else {
+
+
+            register.push(obj)
+
+            localStorage.setItem("register", JSON.stringify(register))
+
+            if (obj.name != "" && obj.email != "" && obj.phone != "" && obj.password != "") {
+                location.href = "index.html"
+            }
+            else {
+                alert("please!! register")
+            }
+
+
+        }
+
+
+
     })
+
+
+
+
+    let login = document.querySelector("#login")
+    login.addEventListener("submit", function (e) {
+        e.preventDefault()
+        let objlog = {
+            email: document.getElementById("email1").value,
+            password: document.getElementById("password1").value
+        }
+
+        register = JSON.parse(localStorage.getItem("register")) || []
+
+        let log = register.filter((ele) => {
+            if (ele.email == objlog.email && ele.password == objlog.password) {
+                return ele
+            }
+        })
+        if (log[0]) {
+            location.href = "index.html"
+        }
+        else {
+            alert("user isnt registered")
+        }
+
+    })
+
+
+
+
 
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
 
 </html>
